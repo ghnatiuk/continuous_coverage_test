@@ -1,6 +1,6 @@
 Testing 1.9.3 Coverage
 
-ruby ext/extconf.rb
+ruby ext/extconf.rb --with-ruby-include="<path to 1.9.3 source>"
 make
 
 ...
