@@ -1,0 +1,21 @@
+Testing 1.9.3 Coverage
+
+ruby ext/extconf.rb
+make
+
+...
+
+>> require 'ccoverage'
+
+>> CCoverage.start
+
+>> require 'some_file.rb'
+>> SomeFile.do_something
+
+>> CCoverage.continuous_result
+=> { "some_file.rb" => [0,1,1,nil]
+
+>> SomeFile.do_something # again ... here's where we differ from 1.9.3
+
+>> CCoverage.continuous_result
+=> { "some_file.rb" => [0,2,2,nil] }
